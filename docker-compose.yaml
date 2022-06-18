@@ -1,0 +1,12 @@
+# Version of Docker-Compose.
+version: '3'
+
+# Container Info
+services:
+  redis-server:
+    image: 'redis'
+  node-app:
+    # Build container using Dockerfile in Current Directory.
+    build: .
+    ports: # Dash means array in yaml files.
+      - "4001:8081" # 4001 from outside container 8081 for container port
